@@ -24,7 +24,7 @@
 
   DataStore.prototype.removeAll = function () {
     delete this.data;
-  }
+  };
 
   App.DataStore = DataStore;
   window.App = App;

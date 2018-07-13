@@ -41,6 +41,12 @@ rap/4.1.1/css/bootstrap.min.css">
                   Grande
                 </label>
               </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="size" value="venti">
+                  Venti
+                </label>
+              </div>
               <div class="form-group">
               <label for="flavorShot">Flavor Shot</label>
               <select id="flavorShot" class="form-control" name="flavor">
@@ -48,20 +54,31 @@ rap/4.1.1/css/bootstrap.min.css">
                 <option value="caramel">Caramel</option>
                 <option value="almond">Almond</option>
                 <option value="mocha">Mocha</option>
+                <option value="mocha">Vanilla</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="strengthLevel">Caffeine Rating</label>
-              <input name="strength" id="strengthLevel" type="range" value="30">
+              <label for="strengthLevel">Caffeine Rating</label><br/>
+              <input name="strength" id="strengthLevel" type="range" value="30"
+              style="width: 100%;">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
             <button type="reset" class="btn btn-default">Reset</button>
          </form>
        </div>
      </div>
+     <br>
+     <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Pending Orders:</h4>
+          <div data-coffee-order="checklist">
+          </div>
+        </div>
+      </div>
    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
       charset="utf-8"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
     <script src="scripts/formhandler.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>
