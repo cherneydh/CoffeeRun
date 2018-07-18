@@ -14,40 +14,26 @@
     }
   }
 
-  function myModal(f) {
-    var form = f,
-      modal = $("<div/>", {
-        "id": "alert",
-        "html": "<iframe src=\"url\"></iframe>"
-      })
-        .dialog({
-          "title": "Iframe in a modal window",
-          "modal": true,
-          "width": 350,
-          "height": "auto",
-          "buttons": {
-            "OK": function() {
-              $(this).dialog("close");
-            // do something, maybe call form.submit();
-            }
-          }
-        });
-    return false;
+  function showDiv() {
+    document.getElementById("payment").style.display = "block";
+  }
+
+  function hideDiv() {
+    document.getElementById("info").style.display = "none";
   }
 
   FormHandler.prototype.addSubmitHandler = function(fn) {
-    console.log("Setting submit handler for form");
     this.$formElement.on("submit", function(event) {
       event.preventDefault();
 
       var data = {};
       $(this).serializeArray().forEach(function(item) {
         data[item.name] = item.value;
-        console.log(item.name + ' is ' + item.value);
       });
-      console.log(data);
       fn(data);
       //window.location.replace("payment-form.html");
+      hideDiv();
+      showDiv();
       this.reset();
       this.elements[0].focus();
     });

@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
   "use strict";
   var App = window.App || {};
 
@@ -7,22 +7,22 @@
     this.db = db;
   }
 
-  Truck.prototype.createOrder = function (order) {
-    console.log('Adding order for ' + order.email);
+  Truck.prototype.createOrder = function(order) {
+    console.log("Adding order for " + order.email);
     this.db.add(order.email, order);
   };
 
-  Truck.prototype.deliverOrder = function (customerId) {
-    console.log('Delivering order for ' + customerId);
+  Truck.prototype.deliverOrder = function(customerId) {
+    console.log("Delivering order for " + order.email);
     this.db.remove(customerId);
   };
 
-  Truck.prototype.printOrders = function () {
+  Truck.prototype.printOrders = function() {
     var customerIdArray = Object.keys(this.db.getAll());
-    if(customerIdArray.length > 0){
-      console.log('Truck #' + this.truckId + ' has pending orders:');
+    if (customerIdArray.length > 0) {
+      console.log("Truck #" + this.truckId + " has pending orders:");
     }
-    customerIdArray.forEach(function (id) {
+    customerIdArray.forEach(function(id) {
       console.log(this.db.get(id));
     }.bind(this));
   };
@@ -31,3 +31,5 @@
   window.App = App;
 
 })(window);
+
+//Cannot get rid of console.logs
